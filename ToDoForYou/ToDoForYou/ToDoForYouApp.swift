@@ -13,8 +13,10 @@ struct ToDoForYouApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartupView()
+            //MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }

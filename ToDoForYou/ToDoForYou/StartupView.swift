@@ -2,7 +2,7 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct StartupView: View {
 
     var body: some View {
         ZStack {
@@ -16,7 +16,17 @@ struct ContentView: View {
                     .font(.title)
                     .foregroundStyle(.indigo)
                     .backgroundStyle(.teal)
-                Image("TestBear").resizable().frame(width: 100, height: 100, alignment: .center)
+                NavigationView
+                {
+                    NavigationLink(destination: MainView(), label: {
+                        ZStack {
+                            Color.indigo
+                            // Add NavigationLink
+                            Image("TestBear").resizable().frame(width: 100, height: 100, alignment: .center)
+                        }
+                    })
+                    
+                }
                 Text("Loading...")
                     .font(.subheadline)
             }
@@ -26,5 +36,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    StartupView()
 }
